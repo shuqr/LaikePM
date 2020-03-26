@@ -22,4 +22,5 @@ def show(request):
     ctx = {}
     list = AppVersion.objects.filter(appName='小千助手').order_by('-createTime')[:20]
     ctx['list'] = list
+    ctx['STATIC_URL'] = 'AppsShop/'
     return render(request, 'apps.html', ctx)
